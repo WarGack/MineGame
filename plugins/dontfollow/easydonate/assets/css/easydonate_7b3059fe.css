@@ -1,0 +1,24 @@
+.grecaptcha-badge {
+    display: none !important;
+}
+
+.securepay-frame {
+    height: 600px;
+    max-height: calc(100% - 30px);
+    width: 678px;
+    max-width: calc(100% - 30px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    z-index: 99;
+}
+
+.securepay-frame.d-none {
+    display: none;
+}
+
+.seller-credentials {
+    border-bottom: 1px dashed currentColor;
+}

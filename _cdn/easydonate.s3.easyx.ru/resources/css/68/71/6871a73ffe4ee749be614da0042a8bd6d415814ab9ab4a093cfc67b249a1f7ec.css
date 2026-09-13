@@ -1,0 +1,353 @@
+/* Основной акцентный цвет и его вариации */
+body {
+    --color-accent: #FF7D00;
+    --color-accent-125: rgba(255, 125, 0, 0.15);
+    --color-accent-15: rgba(255, 125, 0, 0.15);
+    --color-accent-25: rgba(255, 125, 0, 0.25);
+    --color-accent-50: rgba(255, 125, 0, 0.5);
+    --color-accent-75: rgba(255, 125, 0, 0.75);
+}
+
+/* Кнопки */
+.btn-accent {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    color: white !important;
+}
+
+.btn-accent:hover {
+    background-color: #E67000 !important;
+    border-color: #E67000 !important;
+}
+
+/* Ховер-эффекты для кнопок */
+.btn-outline-accent {
+    color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+}
+
+.btn-outline-accent:hover {
+    background-color: var(--color-accent) !important;
+    color: white !important;
+}
+
+/* Активные элементы */
+.navbar-dropdown-menu-item.active,
+.spirit-navbar-item.active {
+    color: var(--color-accent) !important;
+}
+
+.navbar-dropdown-menu-item.active svg path,
+.spirit-navbar-item.active svg path {
+    stroke: var(--color-accent) !important;
+}
+
+/* Чекбоксы и радиокнопки */
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+}
+
+/* Прогресс-бары */
+.progress-bar {
+    background-color: var(--color-accent) !important;
+}
+
+/* Ссылки */
+a {
+    color: var(--color-accent) !important;
+}
+
+a:hover {
+    color: #E67000 !important;
+}
+
+/* Кастомные элементы интерфейса */
+.payment-type-default:hover {
+    border-color: var(--color-accent) !important;
+}
+
+.cart-badge:hover {
+    color: var(--color-accent) !important;
+}
+
+/* Анимации для кнопок */
+@keyframes pulse-accent {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 125, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 125, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 125, 0, 0);
+    }
+}
+
+.btn-pulse-accent {
+    animation: pulse-accent 1.5s infinite;
+}
+/* Полный перезаписывающий стиль для кнопки "Перейти в магазин" */
+.section-jumbotron .btn-xl.btn-accent.rounded-pill {
+    position: relative;
+    transition: all 0.3s ease !important;
+    opacity: 1 !important;
+    color: white !important; /* Добавляем белый цвет текста */
+}
+
+.section-jumbotron .btn-xl.btn-accent.rounded-pill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-accent);
+    border-radius: 9999px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.section-jumbotron .btn-xl.btn-accent.rounded-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 125, 0, 0.3);
+    color: white !important; /* Убедимся, что текст остается белым */
+}
+
+.section-jumbotron .btn-xl.btn-accent.rounded-pill:hover::before {
+    opacity: 0.9;
+}
+
+.section-jumbotron .btn-xl.btn-accent.rounded-pill span {
+    position: relative;
+    z-index: 1;
+    opacity: 1 !important;
+    display: inline-block !important;
+    transition: all 0.3s ease;
+    color: inherit !important; /* Наследует белый цвет от родителя */
+}
+
+/* Фикс для кнопки "Перейти к оформлению" */
+.btn-cart-checkout {
+    /* Не трогаем позицию и базовые стили */
+    transition: all 0.3s ease !important;
+    background-color: rgba(255, 167, 38, 0.2) !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    box-shadow: none !important;
+    transform: none !important;
+    color: white !important; /* Фиксируем белый цвет текста */
+}
+
+/* Псевдоэлемент для фона */
+.btn-cart-checkout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-accent) !important;
+    border-radius: 9999px !important;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Стили при наведении */
+.btn-cart-checkout:hover {
+    background-color: transparent !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 125, 0, 0.3) !important;
+    color: white !important; /* Фиксируем белый цвет */
+}
+
+/* Анимация фона при наведении */
+.btn-cart-checkout:hover::before {
+    opacity: 1 !important;
+}
+
+/* Стиль текста */
+.btn-cart-checkout span {
+    display: inline-block !important;
+    color: white !important; /* Жёстко фиксируем белый цвет */
+    opacity: 1 !important;
+    transition: all 0.3s ease !important;
+    text-shadow: none !important;
+}
+
+/* Свечение текста при наведении */
+.btn-cart-checkout:hover span {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 1) !important; /* Ярче */
+}
+
+/* Эффект свечения текста при наведении */
+.section-jumbotron .btn-xl.btn-accent.rounded-pill:hover span {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    animation: text-glow 1.5s infinite alternate;
+}
+
+@keyframes text-glow {
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+    }
+}
+/* Плавное подчеркивание для пунктов меню */
+.spirit-navbar-item a {
+    position: relative;
+}
+
+.spirit-navbar-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FF7D00;
+    transition: width 0.3s ease;
+}
+
+.spirit-navbar-item a:hover::after {
+    width: 100%;
+}
+/* Эффект подъема карточек */
+.shop-products .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center bottom;
+}
+
+.shop-products .product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+/* Эффект "жидкого" наведения */
+.btn-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0.6s ease;
+}
+
+.btn-accent:hover::before {
+    clip-path: circle(100% at 50% 50%);
+}
+/* Плавное появление элементов */
+.shop-products {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Стилизация скролла в современном стиле */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,125,0,0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,140,0,1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,179,0,1);
+}
+/* Стилизация полей ввода */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,125,0,0.3);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+    border-color: #FF7D00;
+    box-shadow: 0 0 0 3px rgba(255,125,0,0.1);
+    outline: none;
+}
+/* Плавное взаимодействие с иконками */
+.spirit-navbar-item svg {
+    transition: transform 0.3s ease;
+}
+
+.spirit-navbar-item:hover svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Форсированное переопределение стилей для чекбокса и текста */
+.form-check.mt-36.mb-4,
+.form-check.mt-36.mb-4 * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.form-check-input {
+    opacity: 1 !important;
+    filter: brightness(1.5) !important;
+    -webkit-filter: brightness(1.5) !important;
+    appearance: auto !important;
+    -webkit-appearance: checkbox !important;
+}
+
+.form-check-label {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.form-check-label a.color-accent {
+    color: #ff9500 !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+}
+
+/* Для модального окна корзины */
+.modal .form-check-label {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+
+
+/* Замена иконки только для раздела "Рубли" */
+.spirit-shop-category.filter-button[data-filter=".Рубли"] svg path {
+    d: path("M10.1044 40.311C10.8285 40.7136 11.7418 40.4529 12.1443 39.7289C12.5469 39.0049 12.2863 38.0916 11.5622 37.689L10.1044 40.311ZM10.8333 29.6667C11.6618 29.6667 12.3333 28.9951 12.3333 28.1667C12.3333 27.3382 11.6618 26.6667 10.8333 26.6667L10.8333 29.6667ZM18 30.3333C18 33.0026 20.1245 35.0153 22.6366 36.2713C25.2382 37.5721 28.7275 38.3333 32.5 38.3333V35.3333C29.0922 35.3333 26.0814 34.6396 23.9782 33.588C21.7853 32.4916 21 31.2543 21 30.3333H18ZM32.5 38.3333C36.2725 38.3333 39.7618 37.5721 42.3634 36.2713C44.8755 35.0153 47 33.0026 47 30.3333H44C44 31.2543 43.2147 32.4916 41.0218 33.588C38.9186 34.6396 35.9078 35.3333 32.5 35.3333V38.3333ZM47 30.3333C47 27.6641 44.8755 25.6514 42.3634 24.3954C39.7618 23.0945 36.2725 22.3333 32.5 22.3333V25.3333C35.9078 25.3333 38.9186 26.027 41.0218 27.0787C43.2147 28.1751 44 29.4124 44 30.3333H47ZM32.5 22.3333C28.7275 22.3333 25.2382 23.0945 22.6366 24.3954C20.1245 25.6514 18 27.6641 18 30.3333H21C21 29.4124 21.7853 28.1751 23.9782 27.0787C26.0814 26.027 29.0922 25.3333 32.5 25.3333V22.3333ZM18 30.3333V39H21V30.3333H18ZM18 39C18 41.6683 20.1247 43.6809 22.6364 44.9371C25.238 46.2382 28.7273 47 32.5 47V44C29.0923 44 26.0816 43.3058 23.9783 42.2539C21.7851 41.1571 21 39.9197 21 39H18ZM32.5 47C36.2727 47 39.762 46.2382 42.3636 44.9371C44.8753 43.6809 47 41.6683 47 39H44C44 39.9197 43.2149 41.1571 41.0217 42.2539C38.9184 43.3058 35.9077 44 32.5 44V47ZM47 39V30.3333H44V39H47ZM5 13C5 14.7333 5.92852 16.231 7.26015 17.384C8.59247 18.5376 10.432 19.4487 12.5838 20.0701L13.4162 17.1879C11.5466 16.648 10.1362 15.9059 9.22385 15.116C8.31081 14.3255 8 13.5893 8 13H5ZM12.5838 20.0701C16.8771 21.31 22.1229 21.31 26.4162 20.0701L25.5838 17.1879C21.8344 18.2707 17.1656 18.2707 13.4162 17.1879L12.5838 20.0701ZM26.4162 20.0701C28.568 19.4487 30.4075 18.5376 31.7399 17.384C33.0715 16.231 34 14.7333 34 13H31C31 13.5893 30.6892 14.3255 29.7761 15.116C28.8638 15.9059 27.4534 16.648 25.5838 17.1879L26.4162 20.0701ZM34 13C34 11.2667 33.0715 9.76896 31.7399 8.616C30.4075 7.46243 28.568 6.55131 26.4162 5.92989L25.5838 8.81211C27.4534 9.35202 28.8638 10.0941 29.7761 10.884C30.6892 11.6745 31 12.4107 31 13H34ZM26.4162 5.92989C22.1229 4.69004 16.8771 4.69004 12.5838 5.92989L13.4162 8.81211C17.1656 7.7293 21.8344 7.7293 25.5838 8.81211L26.4162 5.92989ZM12.5838 5.92989C10.432 6.55131 8.59247 7.46243 7.26015 8.616C5.92852 9.76896 5 11.2667 5 13H8C8 12.4107 8.31081 11.6745 9.22385 10.884C10.1362 10.0941 11.5466 9.35202 13.4162 8.81211L12.5838 5.92989ZM5 13V34.6667H8V13H5ZM5 34.6667C5 35.6758 5.54318 36.5273 6.01623 37.1054C6.52281 37.7244 7.16175 38.2845 7.74559 38.7387C8.33828 39.1998 8.92368 39.5898 9.35669 39.8626C9.57457 39.9999 9.75718 40.1096 9.88711 40.1859C9.95214 40.2241 10.0042 40.2541 10.0411 40.2752C10.0595 40.2857 10.0742 40.294 10.0849 40.3C10.0902 40.303 10.0945 40.3054 10.0978 40.3073C10.0994 40.3082 10.1008 40.309 10.1019 40.3096C10.1024 40.3099 10.1029 40.3102 10.1034 40.3104C10.1036 40.3105 10.1038 40.3107 10.1039 40.3107C10.1042 40.3109 10.1044 40.311 10.8333 39C11.5622 37.689 11.5624 37.6891 11.5626 37.6892C11.5627 37.6892 11.5628 37.6893 11.5629 37.6894C11.5631 37.6895 11.5632 37.6895 11.5632 37.6895C11.5633 37.6896 11.5631 37.6895 11.5626 37.6892C11.5617 37.6887 11.5598 37.6877 11.557 37.686C11.5512 37.6828 11.5415 37.6773 11.5283 37.6698C11.5017 37.6546 11.4606 37.6309 11.4072 37.5995C11.3001 37.5366 11.1442 37.443 10.9558 37.3243C10.5763 37.0853 10.0784 36.7527 9.58774 36.3709C9.08825 35.9823 8.64386 35.5793 8.33793 35.2055C7.99849 34.7907 8 34.6196 8 34.6667H5ZM5 23.8333C5 25.3552 5.90056 26.7982 6.88451 27.7822C7.86845 28.7661 9.3115 29.6667 10.8333 29.6667L10.8333 26.6667C10.4312 26.6667 9.70755 26.3626 9.00583 25.6608C8.3041 24.9591 8 24.2355 8 23.8333H5Z");
+    fill: var(--spirit-shop-category-icon-color);
+    stroke: none;
+}
+
+/* Замена иконки для категории "Кейсы" с сохранением стилей "Рулетки" */
+.spirit-shop-category.filter-button[data-filter=".Кейсы"] svg path {
+    d: path("M32.5 19.4999H32.5217M35.8692 8.32645L43.6735 16.1308C44.2524 16.7096 44.7117 17.3968 45.025 18.1532C45.3383 18.9095 45.4996 19.7202 45.4996 20.5389C45.4996 21.3575 45.3383 22.1682 45.025 22.9245C44.7117 23.6809 44.2524 24.3681 43.6735 24.9469L37.947 30.6734C37.3682 31.2524 36.6809 31.7116 35.9246 32.0249C35.1682 32.3383 34.3576 32.4995 33.5389 32.4995C32.7202 32.4995 31.9096 32.3383 31.1532 32.0249C30.3969 31.7116 29.7097 31.2524 29.1308 30.6734L28.4787 30.0213L14.2697 44.2303C13.5497 44.9501 12.5993 45.3935 11.5852 45.4826L11.206 45.4999H8.66667C8.13598 45.4999 7.62377 45.305 7.22719 44.9524C6.83062 44.5998 6.57726 44.1138 6.51517 43.5868L6.5 43.3333V40.7939C6.50025 39.7766 6.85844 38.7918 7.51183 38.0119L7.76967 37.7303L8.66667 36.8333H13V32.4999H17.3333V28.1666L21.9787 23.5213L21.3265 22.8691C20.7476 22.2903 20.2883 21.6031 19.975 20.8467C19.6617 20.0904 19.5004 19.2797 19.5004 18.461C19.5004 17.6424 19.6617 16.8317 19.975 16.0754C20.2883 15.319 20.7476 14.6318 21.3265 14.0529L27.053 8.32645C27.6318 7.74752 28.3191 7.28827 29.0754 6.97495C29.8318 6.66163 30.6424 6.50037 31.4611 6.50037C32.2798 6.50037 33.0904 6.66163 33.8468 6.97495C34.6031 7.28827 35.2903 7.74752 35.8692 8.32645Z");
+    /* Убираем заливку и добавляем обводку как в "Рулетке" */
+    fill: none !important;
+    stroke: var(--spirit-shop-category-icon-color) !important;
+    stroke-width: 3 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}

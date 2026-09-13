@@ -1,0 +1,7 @@
+.product-icon-big {
+    width: 100%;
+    border-radius: 55px;
+    overflow: hidden;
+    isolation: isolate;
+    aspect-ratio: 1/1;
+}
